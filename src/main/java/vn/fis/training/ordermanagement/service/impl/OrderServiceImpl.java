@@ -10,6 +10,7 @@ import vn.fis.training.ordermanagement.repository.OrderRepository;
 import vn.fis.training.ordermanagement.service.OrderService;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -50,11 +51,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> findOrdersByOrderStatus(OrderStatus orderStatus) {
-        return null;
+        return Collections.emptyList();
     }
 
     @Override
     public List<Order> findOrdersByCustomer(Customer customer) {
-        return null;
+        return Collections.emptyList();
     }
 }
