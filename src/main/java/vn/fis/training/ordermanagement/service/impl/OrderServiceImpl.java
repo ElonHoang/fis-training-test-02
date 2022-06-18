@@ -25,12 +25,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order addOrderItem(OrderItem orderItem) {
+    public Order addOrderItem(Long orderId,OrderItem orderItem) {
         return null;
     }
 
     @Override
-    public Order removeOrderItem(OrderItem orderItem) {
+    public Order removeOrderItem(Long orderId,OrderItem orderItem) {
         return null;
     }
 

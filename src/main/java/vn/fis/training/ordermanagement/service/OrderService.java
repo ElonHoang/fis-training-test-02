@@ -12,9 +12,9 @@ public interface OrderService {
 
     Order createOrder(Order order);
 
-    Order addOrderItem(OrderItem orderItem);
+    Order addOrderItem(Long orderId,OrderItem orderItem);
 
-    Order removeOrderItem(OrderItem orderItem);
+    Order removeOrderItem(Long orderId,OrderItem orderItem);
 
     Order updateOrderStatus(Order order,OrderStatus orderStatus);
 
