@@ -22,7 +22,7 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems;
 
-    @Column(name="totalAmount")
+    @Column(name="total_amount")
     private Double totalAmount;
 
     /**
