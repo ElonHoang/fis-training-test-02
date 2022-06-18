@@ -6,6 +6,8 @@ import vn.fis.training.ordermanagement.domain.Customer;
 import vn.fis.training.ordermanagement.repository.CustomerRepository;
 import vn.fis.training.ordermanagement.service.CustomerService;
 
+import java.util.List;
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
@@ -25,5 +27,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void deleteCustomerById(Long customerId) {
 
+    }
+
+    @Override
+    public List<Customer> findAll() {
+        return null;
+    }
+
+    @Override
+    public Customer findByMobileNumber(String mobileNumber) {
+        return null;
     }
 }
