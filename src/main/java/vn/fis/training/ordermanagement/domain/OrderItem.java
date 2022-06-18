@@ -18,4 +18,11 @@ public class OrderItem {
     @JoinColumn(name="product_id")
     private Product product;
 
+    @Column(name="quantity")
+    private Integer quantity;
+
+    @Column(name="amount")
+    private Double amount;
+
+
 }
