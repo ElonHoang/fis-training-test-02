@@ -8,6 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import vn.fis.training.ordermanagement.domain.OrderStatus;
+import vn.fis.training.ordermanagement.domain.Product;
+import vn.fis.training.ordermanagement.repository.ProductRepository;
+import vn.fis.training.ordermanagement.service.CustomerService;
 import vn.fis.training.ordermanagement.service.OrderService;
 
 @SpringBootApplication
@@ -20,6 +23,12 @@ public class OrderManagementApplication {
 
 	@Autowired
 	private OrderService orderService;
+
+	@Autowired
+	private CustomerService customerService;
+
+	private ProductRepository productRepository;
+
 	@Bean
 	CommandLineRunner commandLineRunner() {
 		return new CommandLineRunner() {
@@ -30,4 +39,9 @@ public class OrderManagementApplication {
 			}
 		};
 	}
+
+	public void initProduct() {
+//		productRepository.save(new Product() ...);
+	}
+
 }

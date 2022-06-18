@@ -21,8 +21,8 @@
 1. id : Long
 2. order_id: Khoa ngoai den bang order
 3. product_id: Khoa ngoai den bang product
-4. quantity: so luong cua product
-5. amount: bang quantity * price (cua product)
+4. quantity: Integer : So luong cua product
+5. amount: Double  : Bang quantity * price (cua product)
 
 
 #### 4. TESTING

@@ -16,7 +16,7 @@ public interface OrderService {
 
     Order removeOrderItem(OrderItem orderItem);
 
-    Order updateOrderStatus(OrderStatus orderStatus);
+    Order updateOrderStatus(Order order,OrderStatus orderStatus);
 
     List<Order> findOrdersBetween(LocalDateTime fromDateTime, LocalDateTime toDateTime);
 
