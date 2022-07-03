@@ -16,26 +16,32 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer createCustomer(Customer customer) {
-        return null;
+        customerRepository.save(customer);
+        return customer;
     }
 
     @Override
     public Customer updateCustomer(Customer customer) {
-        return null;
+        Customer c = customerRepository.findById(customer.getId()).get();
+            c.setAddress(customer.getAddress());
+            c.setMobile(customer.getMobile());
+            c.setName(customer.getName());
+            customerRepository.save(c);
+        return customer;
     }
 
     @Override
     public void deleteCustomerById(Long customerId) {
-
+        customerRepository.deleteById(customerId);
     }
 
     @Override
     public List<Customer> findAll() {
-        return null;
+        return customerRepository.findAll();
     }
 
     @Override
     public Customer findByMobileNumber(String mobileNumber) {
-        return null;
+        return customerRepository.findAll().stream().filter(t->t.getMobile().equalsIgnoreCase(mobileNumber)).findFirst().get();
     }
 }

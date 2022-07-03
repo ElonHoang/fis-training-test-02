@@ -12,6 +12,7 @@ import vn.fis.training.ordermanagement.service.OrderService;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -21,6 +22,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order createOrder(Order order) {
+
         return null;
     }
 
@@ -41,7 +43,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> findOrdersBetween(LocalDateTime fromDateTime, LocalDateTime toDateTime) {
-        return null;
+
+        return orderRepository.findAll().stream().filter(t->t.getOrderDateTime().isBefore(fromDateTime) && t.getOrderDateTime().isAfter(toDateTime)).collect(Collectors.toList());
     }
 
     @Override
@@ -51,11 +54,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> findOrdersByOrderStatus(OrderStatus orderStatus) {
-        return Collections.emptyList();
+        return orderRepository.findAll().stream().filter(t->t.getStatus()
+                .equals(orderStatus)).collect(Collectors.toList());
     }
 
     @Override
     public List<Order> findOrdersByCustomer(Customer customer) {
-        return Collections.emptyList();
+
+        return orderRepository.findAll().stream().filter(t->t.getCustomer().equals(customer)).collect(Collectors.toList());
     }
 }
